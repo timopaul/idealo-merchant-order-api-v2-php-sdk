@@ -12,7 +12,11 @@ This SDK can be used under the conditions of the Apache License 2.0, see LICENSE
 - The curl library for PHP
 
 ## Introduction
-The implementation of the idealo SDK is easy and straightforward. How it is used can be seen in the `sandbox.php` file located in the same folder as this readme file. To test to idealo orders API, put the SDK into a folder on your webserver, open `http://<hostname>/path_to_sdk/sandbox.php` and enter the client id and secret token you that you have created in your idealo business account under `Settings > API clients > Credentials for Merchant Order API v2`.
+The implementation of the idealo SDK is easy and straightforward. How it is used can be seen in the `sandbox.php` file located in the same folder as this readme file. To test to idealo orders API, follow these steps:
+
+1. put the SDK into a folder on your webserver
+2. open `http://<hostname>/path_to_sdk/sandbox.php`
+3. enter the client id and secret token you that you have created in your idealo business account under `Settings > API clients > Credentials for Merchant Order API v2`
 
 ## Basics
 The SDK has an autoloader file, which automatically loads the class(es) of the SDK, so that you can use all of them in your project. Simply include the autoloader file at the spot in your code, where you create the instance of the client object using "require_once".
@@ -192,7 +196,7 @@ Sets the number of the order from the merchant for an order from Idealo.
 
     $response = $client->sendRequest($request);
 
-Sets the order to "sent to the customer" and the order status to "COMPLETED".
+Sets the order status to "COMPLETED" and as "sent to the customer".
 
 In addition, tracking information such as carrier and tracking codes can be transmitted so that idealo can track the order and transmit this information to the customer. Tracking information can be expanded by sending carrier and tracking codes multiple times.
 
@@ -211,7 +215,7 @@ In addition, tracking information such as carrier and tracking codes can be tran
 
     $response = $client->sendRequest($request);
 
-Revocation of an order with idealo. A revocation is required. A withdrawal does not automatically trigger a refund. To refund an order, please use `RefundOrder`.
+Revocation of an order with idealo. The revocation is required. A withdrawal does not automatically trigger a refund. To refund an order, please use `RefundOrder`.
 
 ### RefundOrder
 
@@ -271,7 +275,7 @@ In any case you can get the HTTP status code from the last request with the foll
 
     $client->getHttpStatus()
 
-When this method returns 200 everything was ok with the last request.
+If this method returns 200, the last request was fine.
 
 In the idealo API documentation, you can find a list with the HTTP status error-codes and their meanings for every request.
 
