@@ -122,10 +122,6 @@ trait HasParameters
             throw InvalidParameterException::create($name, $this);
         }
 
-        if (is_array($value) || is_object($value)) {
-            $value = json_encode($value);
-        }
-
         $this->parameters[$name] = $value;
         return $this;
     }
