@@ -122,6 +122,11 @@ trait HasParameters
             throw InvalidParameterException::create($name, $this);
         }
 
+        // use boolean url-parameters as integers
+        if (is_bool($value)) {
+            $value = (int) $value;
+        }
+
         $this->parameters[$name] = $value;
         return $this;
     }
