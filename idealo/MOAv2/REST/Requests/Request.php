@@ -66,7 +66,7 @@ abstract class Request
     {
         $methods = [];
         foreach (class_uses(static::class) as $trait) {
-            $method = $this->makUrlPathModificationMethodName($trait);
+            $method = $this->makeUrlPathModificationMethodName($trait);
 
             if (null !== $methods && method_exists($this, $method)) {
                 $methods[] = $method;
@@ -81,7 +81,7 @@ abstract class Request
      * @param string $trait
      * @return string|null
      */
-    protected function makUrlPathModificationMethodName(string $trait): ?string
+    protected function makeUrlPathModificationMethodName(string $trait): ?string
     {
         $matches = [];
         $basename = basename(str_replace('\\', '/', $trait));
