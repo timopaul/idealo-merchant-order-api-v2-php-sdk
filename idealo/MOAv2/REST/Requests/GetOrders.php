@@ -42,5 +42,7 @@ class getOrders extends Request
         'acknowledged',
         'pageSize',
         'pageNumber',
+        'from',
+        'to',
     ];
 }
