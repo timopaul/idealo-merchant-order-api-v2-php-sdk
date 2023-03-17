@@ -1,3 +1,8 @@
+
+## ⛔️ DEPRECATED 
+
+Idealo has discontinued direct purchases.
+
 # idealo Merchant Order API v2: PHP SDK
 idealo Direktkauf v2 PHP SDK
 #### Presented by [Timo Paul Dienstleistungen](https://timopaul.biz/)
